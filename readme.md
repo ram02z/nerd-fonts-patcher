@@ -1,3 +1,10 @@
+### Changes from upstream
+
+- Replace octicons with nonicons
+- Add codicons
+
+Tested on HackFCLigaturedCCG from https://github.com/gaplo917/Ligatured-Hack 
+
 <h1 align="center">
   <img src="images/nerd-fonts-logo.svg" alt="Nerd Fonts Logo" />
 </h1>
