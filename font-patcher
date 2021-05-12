@@ -173,7 +173,7 @@ class font_patcher:
             self.args.fontawesomeextension = True
             self.args.fontlinux = True
             self.args.nonicons = True
-            self.args.codicons = False
+            self.args.codicons = True
             self.args.powersymbols = True
             self.args.pomicons = True
             self.args.powerline = True

@@ -1,7 +1,7 @@
 ### Changes from upstream
 
 - Replace octicons with nonicons
-- Add codicons (nonicons already include codicons)
+- Add codicons (nonicons already include codicons but in a weird order)
 
 Tested on HackFCLigaturedCCG from https://github.com/gaplo917/Ligatured-Hack 
 
