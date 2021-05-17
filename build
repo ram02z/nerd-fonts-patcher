@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+#TODO: Improve script logic
+
+./font-patcher --complete --careful ../HackFCLigaturedCCG-Regular.ttf
+./font-patcher --complete --careful ../HackFCLigaturedCCG-Italic.ttf
+./font-patcher --complete --careful ../HackFCLigaturedCCG-Bold.ttf
+./font-patcher --complete --careful ../HackFCLigaturedCCG-BoldItalic.ttf
+
