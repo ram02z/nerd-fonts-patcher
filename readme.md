@@ -1,7 +1,8 @@
 ### Changes from upstream
 
-- Replace octicons with nonicons
-- Add codicons (nonicons already include codicons but in a weird order)
+- [x] Add codicons
+- [x] Add modicons (derived from nonicons)
+- [ ] Use updated devicons (https://github.com/devicons/devicon)
 
 Tested on HackFCLigaturedCCG from https://github.com/gaplo917/Ligatured-Hack 
 
