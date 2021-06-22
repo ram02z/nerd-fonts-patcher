@@ -2,8 +2,8 @@
 
 #TODO: Improve script logic
 
-./font-patcher --complete --careful ../HackFCLigaturedCCG-Regular.ttf
-./font-patcher --complete --careful ../HackFCLigaturedCCG-Italic.ttf
-./font-patcher --complete --careful ../HackFCLigaturedCCG-Bold.ttf
-./font-patcher --complete --careful ../HackFCLigaturedCCG-BoldItalic.ttf
+./font-patcher --careful --windows --custom codicons ../HackNFCLigaturedCCG-Regular.ttf
+./font-patcher --careful --windows --custom codicons ../HackNFCLigaturedCCG-Italic.ttf
+./font-patcher --careful --windows --custom codicons ../HackNFCLigaturedCCG-Bold.ttf
+./font-patcher --careful --windows --custom codicons ../HackNFCLigaturedCCG-BoldItalic.ttf
 

@@ -158,6 +158,7 @@ class font_patcher:
         sym_font_group.add_argument('--fontlinux', '--fontlogos',                   dest='fontlinux',            default=False, action='store_true', help='Add Font Linux and other open source Glyphs (https://github.com/Lukas-W/font-logos)')
         sym_font_group.add_argument('--octicons',                                   dest='octicons',             default=False, action='store_true', help='Add Octicons Glyphs (https://octicons.github.com)')
         sym_font_group.add_argument('--codicons',                                   dest='codicons',             default=False, action='store_true', help='Add Codicons Glyphs (https://github.com/microsoft/vscode-codicons)')
+        sym_font_group.add_argument('--modicons',                                   dest='modicons',             default=False, action='store_true', help='Add Modicons Glyphs (local)')
         sym_font_group.add_argument('--powersymbols',                               dest='powersymbols',         default=False, action='store_true', help='Add IEC Power Symbols (https://unicodepowersymbol.com/)')
         sym_font_group.add_argument('--pomicons',                                   dest='pomicons',             default=False, action='store_true', help='Add Pomicon Glyphs (https://github.com/gabrielelana/pomicons)')
         sym_font_group.add_argument('--powerline',                                  dest='powerline',            default=False, action='store_true', help='Add Powerline Glyphs')
@@ -174,6 +175,7 @@ class font_patcher:
             self.args.fontlinux = True
             self.args.octicons = True
             self.args.codicons = True
+            self.args.modicons = True
             self.args.powersymbols = True
             self.args.pomicons = True
             self.args.powerline = True
@@ -252,6 +254,10 @@ class font_patcher:
             if self.args.weather:
                 additionalFontNameSuffix += " WEA"
                 verboseAdditionalFontNameSuffix += " Plus Weather Icons"
+            if self.args.modicons:
+                additionalFontNameSuffix += " M"
+                verboseAdditionalFontNameSuffix += " Plus Modicons"
+
 
         # if all source glyphs included simplify the name
         else:
@@ -524,9 +530,9 @@ class font_patcher:
         # Define the character ranges
         # Symbol font ranges
         self.patch_set = [
-            {'Enabled': True,                           'Name': "Seti-UI + Custom",        'Filename': "original-source.otf",              'Exact': False,                               'SymStart': 0xE4FA, 'SymEnd': 0xE530, 'SrcStart': 0xE5FA, 'SrcEnd': 0xE630, 'ScaleGlyph': None,             'Attributes': SYM_ATTR_DEFAULT},
-            {'Enabled': True,                           'Name': "Modicons",                'Filename': "modicons.ttf",                     'Exact': False,                               'SymStart': 0xE3E8, 'SymEnd': 0xE3EE, 'SrcStart': None,   'SrcEnd': None,   'ScaleGlyph': None,             'Attributes': SYM_ATTR_DEFAULT},
-            {'Enabled': True,                           'Name': "Devicons",                'Filename': "devicons.ttf",                     'Exact': False,                               'SymStart': 0xe601, 'SymEnd': 0xE6C5, 'SrcStart': 0xE700, 'SrcEnd': 0xE7C5, 'ScaleGlyph': DEVI_SCALE_LIST,  'Attributes': SYM_ATTR_DEFAULT},
+            {'Enabled': False,                           'Name': "Seti-UI + Custom",        'Filename': "original-source.otf",              'Exact': False,                               'SymStart': 0xE4FA, 'SymEnd': 0xE530, 'SrcStart': 0xE5FA, 'SrcEnd': 0xE630, 'ScaleGlyph': None,             'Attributes': SYM_ATTR_DEFAULT},
+            {'Enabled': False,                           'Name': "Devicons",                'Filename': "devicons.ttf",                     'Exact': False,                               'SymStart': 0xe601, 'SymEnd': 0xE6C5, 'SrcStart': 0xE700, 'SrcEnd': 0xE7C5, 'ScaleGlyph': DEVI_SCALE_LIST,  'Attributes': SYM_ATTR_DEFAULT},
+            {'Enabled': self.args.modicons,             'Name': "Modicons",                'Filename': "modicons.ttf",                     'Exact': False,                               'SymStart': 0xE3E8, 'SymEnd': 0xE3EE, 'SrcStart': None,   'SrcEnd': None,   'ScaleGlyph': None,             'Attributes': SYM_ATTR_DEFAULT},
             {'Enabled': self.args.codicons,             'Name': "Codicons",                'Filename': "codicons.ttf",                     'Exact': False,                               'SymStart': 0xEA60, 'SymEnd': 0xEBD0, 'SrcStart': None,   'SrcEnd': None,   'ScaleGlyph': None,             'Attributes': SYM_ATTR_DEFAULT},
             {'Enabled': self.args.powerline,            'Name': "Powerline Symbols",       'Filename': "PowerlineSymbols.otf",             'Exact': True,                                'SymStart': 0xE0A0, 'SymEnd': 0xE0A2, 'SrcStart': None,   'SrcEnd': None,   'ScaleGlyph': None,             'Attributes': SYM_ATTR_POWERLINE},
             {'Enabled': self.args.powerline,            'Name': "Powerline Symbols",       'Filename': "PowerlineSymbols.otf",             'Exact': True,                                'SymStart': 0xE0B0, 'SymEnd': 0xE0B3, 'SrcStart': None,   'SrcEnd': None,   'ScaleGlyph': None,             'Attributes': SYM_ATTR_POWERLINE},
